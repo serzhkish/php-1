@@ -1,11 +1,8 @@
 <?php
-    $a = rand(-10, 10);
-    $b = rand(-10, 10);
-    echo "\$a = $a, \$b = $b <hr>";
-    if ($a >= 0 && $b >= 0)
-        echo "\$a - \$b = ".($a - $b);
-    else
-        if ($a < 0 && $b < 0)
-            echo "\$a * \$b = ".($a * $b);
-        else
-            echo "\$a + \$b = ".($a + $b);
+  $i = 0;
+  while ($i <= 100) {
+    if ($i % 3 == 0) {
+      echo $i."<br>";
+    }
+    $i++;
+  }

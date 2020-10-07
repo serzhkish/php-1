@@ -33,9 +33,10 @@
     "э" => "e",
     "ю" => "yu",
     "я" => "ya",
+    " " => "_",
   ];
 
-  function transliteration($str, $trans) {
+  function transliteration2($str, $trans) {
     $str = mb_strtolower($str);
     $strLength = strlen($str);
     for ($i = 0; $i < $strLength; $i++) {      
@@ -50,4 +51,4 @@
 
   $txt = "Привет Мир, ложь!";
   echo "Оригинальный текст: $txt<hr>";
-  echo "Транслитерация: ".transliteration($txt, $letters);
+  echo "Транслитерация: ".transliteration2($txt, $letters);

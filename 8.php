@@ -6,5 +6,10 @@
   ];
   foreach ($country as $region => $cities) {
     echo $region.":<br>";
-    echo implode(", ", $cities)."<br><br>";
+    foreach ($cities as $city) {
+      if (mb_substr($city, $i, 1) === "К") {
+        echo "$city ";
+      }
+    }
+    echo "<br><br>";
   }
