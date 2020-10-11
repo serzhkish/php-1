@@ -1,53 +1,16 @@
-<?php
-  $letters = [
-    "а" => "a",
-    "б" => "b",
-    "в" => "v",
-    "г" => "g",
-    "д" => "d",
-    "е" => "e",
-    "ё" => "jo",
-    "ж" => "zh",
-    "з" => "z",
-    "и" => "i",
-    "й" => "y",
-    "к" => "k",
-    "л" => "l",
-    "м" => "m",
-    "н" => "n",
-    "о" => "o",
-    "п" => "p",
-    "р" => "r",
-    "с" => "s",
-    "т" => "t",
-    "у" => "u",
-    "ф" => "f",
-    "х" => "h",
-    "ц" => "ts",
-    "ч" => "ch",
-    "ш" => "sh",
-    "щ" => "shch",
-    "ъ" => "\"",
-    "ы" => "y",
-    "ь" => "'",
-    "э" => "e",
-    "ю" => "yu",
-    "я" => "ya",
-  ];
-
-  function transliteration($str, $trans) {
-    $str = mb_strtolower($str);
-    $strLength = strlen($str);
-    for ($i = 0; $i < $strLength; $i++) {      
-      if ($trans[mb_substr($str, $i, 1)]) {
-        $newStr .= $trans[mb_substr($str, $i, 1)];
-      } else {
-        $newStr .= mb_substr($str, $i, 1);
-      }
-    }
-    return $newStr;
-  }
-
-  $txt = "Привет Мир, ложь!";
-  echo "Оригинальный текст: $txt<hr>";
-  echo "Транслитерация: ".transliteration($txt, $letters);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 4.4</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <form enctype="multipart/form-data" action="4-compress.php" method="POST">  
+      <input type="hidden" name="MAX_FILE_SIZE" value="30000000" />
+      <input type="file" class="pic" name="pic" accept=".jpg, .jpeg, .png" />
+      <input type="submit" value="Отправить" />
+  </form>
+</body>
+</html>
