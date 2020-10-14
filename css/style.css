@@ -6,6 +6,10 @@
   margin: 0 auto;
 }
 
+a {
+  display: block;
+}
+
 .imgs {
   margin: 5px;
 }
