@@ -12,7 +12,7 @@
         <span class="good-title"><?= $data["name"] ?></span>
         <img src=<?= IMG_PATH.$data["img"] ?> alt="" class="good-img" width=<?= IMG_WIDTH ?> height=<?= IMG_HEIGHT ?>>
         <span class="good-price">Цена: <?= $data["price"] ?></span>
-        <button class="good-btn" onclick="cart(this,<?= $data['id'] ?>);"><span class="good-btn-txt">Купить</span></button>
+        <button class="good-btn" onclick="postCartAdd(this,<?= $data['id'] ?>);"><span class="good-btn-txt">Купить</span></button>
       </div>
     <?php
       endwhile;

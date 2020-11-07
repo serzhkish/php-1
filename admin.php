@@ -26,26 +26,15 @@
   $desc = $_POST["desc"];
   $price = $_POST["price"];
   $count = $_POST["count"];
+  
   if ($title) {
     addGood($connectMySQL, $title, $desc, $price, $count, $_FILES["img-path"]);
+    $addGood = "block";
+  } else {
+    $addGood = "none";
   }
-?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Админка</title>
-  <link href="css/style.css" rel="stylesheet">
-  <link href="img/favicon.png" rel="icon" type="image/png">
-</head>
-<body>
-  <?php
-    include_once("modules/header.php");
-    include_once("modules/admin-center.php");
-    include_once("modules/footer.php");
-  ?>
-  <script src="js/main.js"></script>
-</body>
-</html>
+  $titlePage = "Админка";
+  $contentPage = "modules/admin-center.php";
+  include_once("template.tpl");
+?>
